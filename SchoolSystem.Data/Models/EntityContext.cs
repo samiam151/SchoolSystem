@@ -8,10 +8,16 @@ namespace SchoolSystem.Data.Models
         public DbSet<Program> Programs { get; set; }
         public DbSet<Course> Courses { get; set; }
 
-        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Entity<Student>()
-        //        .HasMany
-        //}
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Student>()
+                .HasMany<Course>(c => c.Courses)
+                .WithMany(c => c.Students)
+                .Map(cs => {
+                    cs.MapLeftKey("StudentId");
+                    cs.MapRightKey("CourseId");
+                    cs.ToTable("StudentCourse");
+                });
+        }
     }
 }

@@ -9,7 +9,13 @@ namespace SchoolSystem.Data.Models
 {
     public class Course : Entity
     {
+        public Course()
+        {
+            Students = new List<Student>();
+        }
+
         public string Name { get; set; }
         public int ProgramId { get; set; }
+        public ICollection<Student> Students { get; set; }
     }
 }
