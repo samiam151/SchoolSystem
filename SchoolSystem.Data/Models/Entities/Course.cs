@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace SchoolSystem.Data.Models
 {
@@ -11,11 +7,14 @@ namespace SchoolSystem.Data.Models
     {
         public Course()
         {
-            Students = new List<Student>();
+            Students = new HashSet<Student>();
         }
 
+        [MinLength(2)][MaxLength(50)]
         public string Name { get; set; }
+
         public int ProgramId { get; set; }
+
         public ICollection<Student> Students { get; set; }
     }
 }

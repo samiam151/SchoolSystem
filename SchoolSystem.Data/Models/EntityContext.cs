@@ -4,6 +4,12 @@ namespace SchoolSystem.Data.Models
 {
     public class EntityContext : DbContext
     {
+        public EntityContext()
+        {
+            this.Database.Log = s => System.Diagnostics.Debug.WriteLine(s);
+            this.Configuration.LazyLoadingEnabled = false;
+        }
+
         public DbSet<Student> Students { get; set; }
         public DbSet<Program> Programs { get; set; }
         public DbSet<Course> Courses { get; set; }

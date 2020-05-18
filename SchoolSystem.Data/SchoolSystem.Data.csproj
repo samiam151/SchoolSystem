@@ -74,6 +74,18 @@
     <Compile Include="Migrations\202005171845103_AddedFluent.designer.cs">
       <DependentUpon>202005171845103_AddedFluent.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005171931291_ChangesSeed.cs" />
+    <Compile Include="Migrations\202005171931291_ChangesSeed.designer.cs">
+      <DependentUpon>202005171931291_ChangesSeed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005172309206_ChangesSeed2.cs" />
+    <Compile Include="Migrations\202005172309206_ChangesSeed2.designer.cs">
+      <DependentUpon>202005172309206_ChangesSeed2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005180124311_Changeetypes.cs" />
+    <Compile Include="Migrations\202005180124311_Changeetypes.designer.cs">
+      <DependentUpon>202005180124311_Changeetypes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Entities\Course.cs" />
     <Compile Include="Models\Entity.cs" />
     <Compile Include="Migrations\Configuration.cs" />
@@ -101,6 +113,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202005171845103_AddedFluent.resx">
       <DependentUpon>202005171845103_AddedFluent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005171931291_ChangesSeed.resx">
+      <DependentUpon>202005171931291_ChangesSeed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005172309206_ChangesSeed2.resx">
+      <DependentUpon>202005172309206_ChangesSeed2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005180124311_Changeetypes.resx">
+      <DependentUpon>202005180124311_Changeetypes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

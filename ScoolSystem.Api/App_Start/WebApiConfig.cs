@@ -16,6 +16,8 @@ namespace SchoolSystem.Api
             AutofacConfig.Register();
             // Change to camel case
             config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            config.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+            config.Formatters.JsonFormatter.SerializerSettings.MaxDepth = 2;
             // Web API routes
             config.MapHttpAttributeRoutes();
             config.EnableCors(new EnableCorsAttribute("*", "*", "GET,PUT,POST,DELETE"));

@@ -1,10 +1,8 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Reflection;
 
 namespace SchoolSystem.Data.Extentions
 {
@@ -14,8 +12,12 @@ namespace SchoolSystem.Data.Extentions
         {
             var dbSetType = typeof(DbSet<>).MakeGenericType(type);
             foreach (var method in source.GetType().GetMethods())
+            {
                 if (method.ReturnType.IsAssignableFrom(dbSetType))
+                {
                     return method.Invoke(source, null);
+                }
+            }
             throw new NotImplementedException("Unable to find DbSet for type: " + dbSetType);
         }
 
@@ -24,9 +26,9 @@ namespace SchoolSystem.Data.Extentions
             var props = type.GetProperties();
             foreach (var prop in props)
             {
-                if (prop.PropertyType.Name.Contains("ICollection"))
+                if (prop.PropertyType.IsGenericType)
                 {
-                    source.Include(prop.Name);
+                    source = source.Include(prop.Name);
                 }
             }
             return source;
