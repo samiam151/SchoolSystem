@@ -124,6 +124,12 @@
       <DependentUpon>202005180124311_Changeetypes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SchoolSystem.Database\SchoolSystem.Database.sqlproj">
+      <Project>{b02677fe-4ec4-44e1-8cdf-1876136ea14c}</Project>
+      <Name>SchoolSystem.Database</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

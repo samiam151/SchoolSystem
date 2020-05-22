@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
-using System.Xml;
 using SchoolSystem.Data.Models;
 
 namespace SchoolSystem.Data.Migrations

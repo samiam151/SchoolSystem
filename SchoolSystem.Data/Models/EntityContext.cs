@@ -8,6 +8,7 @@ namespace SchoolSystem.Data.Models
         {
             this.Database.Log = s => System.Diagnostics.Debug.WriteLine(s);
             this.Configuration.LazyLoadingEnabled = false;
+
         }
 
         public DbSet<Student> Students { get; set; }

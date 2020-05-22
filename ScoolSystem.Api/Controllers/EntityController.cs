@@ -8,7 +8,6 @@ using System.Web.Http;
 
 namespace SchoolSystem.Api.Controllers
 {
-    // [RoutePrefix(String.Format("api/{0}", typeof(T).FullName))]
     public class EntityController<T> : ApiController where T : Entity
     {
         protected readonly DbContext dbContext;
